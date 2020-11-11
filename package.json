@@ -1,0 +1,20 @@
+{
+  "name": "rocketassets",
+  "version": "0.1.0",
+  "description": "A lightweight Sass Tool Set for rocket projects",
+  "main": "index.js",
+  "author": "Gaultier Laperche",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "kss": "^3.0.1",
+    "sass": "^1.29.0"
+  },
+  "dependencies": {
+    "postcss": "^8.1.7",
+    "postcss-import": "^13.0.0",
+    "tailwindcss": "^1.9.6"
+  }
+}

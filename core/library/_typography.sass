@@ -1,0 +1,43 @@
+@charset "UTF-8"
+
+%heading-1
+  @apply font-body font-light text-black
+  font-size: 2rem
+
+%heading-2
+  @apply font-body font-light text-black text-xl
+
+  i.title-icon
+    @apply inline-block mr-3
+    @apply text-lg
+    @apply text-indigo-700
+
+    &.title-icon--danger
+      @apply text-red-500
+
+%heading-3
+  @apply font-body font-light text-black text-lg
+
+%heading-4
+  @apply font-body font-light text-black text-sm
+
+%font-style-bignum
+  @apply block
+  @apply text-4xl font-light
+
+  em
+    @apply text-xl font-thin not-italic
+
+%font-style-numeric
+  @apply block
+  @apply text-2xl font-light
+
+  em
+    @apply text-base font-thin not-italic
+
+
+%font-style-input
+  @apply text-sm font-light leading-normal
+
+%font-style-label
+  @apply text-sm font-normal leading-normal text-grey-700

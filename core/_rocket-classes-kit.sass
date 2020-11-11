@@ -1,0 +1,44 @@
+// Rocket Classes Kit 1.0.0
+// MIT License
+
+// Classes Kit
+//
+// The **classes kit** is an opinionated set of classes you can apply to your app
+// to get Jaco Base Ui Kit available for your components. To use it, import
+// both `rocket` and `rocket-classes-kit` in your app Sass stylesheet, and apply a
+// `.rocket-ui` class on your top level element (e.g. `body`, `main`, or
+// `[role=application]`).
+//
+// It's all based on tailwind CSS
+//
+// All components will then inherit Base styles according to their tags and
+// markups.
+//
+// ```sass
+// @import "rocket";
+// @import "rocket-classes-kit";
+// ```
+//
+// All classes names are translated from the _extend pseudo-classes_ (e.g.
+// `%font-style-h2` is applied in the classes kit to `.rocket-ui .font-style-h2`
+// class).
+//
+// Examples markups in this style guide use this class kit and its conventions
+// to render live examples.
+//
+// Markup:
+// <section role="application" class="rocket-ui">
+//   <h1 class="font-style-h2">Hello World!</h1>
+//   <button class="btn-primary">click me</button>
+// </section>
+//
+// Weight: -10
+//
+// Style guide: Classes kit
+
+.rocket-ui
+  @apply relative
+
+  // Typography
+  .heading-1
+    @extend %heading-1
