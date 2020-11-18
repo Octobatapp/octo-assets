@@ -42,3 +42,105 @@
   // Typography
   .heading-1
     @extend %heading-1
+
+  .heading-2
+    @extend %heading-2
+
+  .heading-3
+    @extend %heading-3
+
+  .bignum
+    @extend %font-style-bignum
+
+  .numeric
+    @extend %font-style-numeric
+
+  // Links
+  .app-link
+    &--secondary-positive
+      @extend %link-secondary--positive
+    &--secondary-negative
+      @extend %link-secondary--negative
+    &--footer
+      @extend %link-footer
+
+  // Forms
+  .form-common
+    @extend %form-common
+  #{$_text-inputs-list}
+    &.input-default
+      @extend %input-default
+
+  .input-labelled
+    @extend %input-labelled
+
+    &--inline
+      @extend %input-labelled-inline
+
+  .radio-default
+    @extend %radio-default
+
+    & + .radio-default
+      @apply ml-6
+
+  .select-default
+    @extend %select-default
+
+
+  // Simple forms
+  .simple-field-section
+    @extend %simple-field-section
+
+  .simple-field-group
+    @extend %simple-field-group
+
+    &--invalid
+      @extend %simple-field-group--invalid
+
+
+
+  // library _buttons
+  #{$_buttons-list}
+    &.btn--lift-up
+      @extend %btn--lift-up
+    &.btn--shadow
+      @extend %btn--shadow
+
+    &.btn
+      @extend %btn
+
+    &.btn--lg
+      @extend %btn--lg
+
+    &.btn--block
+      @extend %btn--block
+
+
+    &.btn--primary
+      @extend %btn--primary
+
+    &.btn--success
+      @extend %btn--success
+
+    &.btn-dropdown
+      @extend %btn-dropdown
+
+
+  // library.badges
+  .badge
+    @extend %badge
+
+    &--success
+      @extend %badge-success
+    &--archived
+      @extend %badge-archived
+
+    &--pill
+      @extend %badge-pill
+    &--caption
+      @extend %badge-caption
+
+    &--positive
+      @extend %badge-positive
+    &--negative
+      @extend %badge-negative

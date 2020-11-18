@@ -1,0 +1,178 @@
+@charset "UTF-8"
+
+// Select Box
+//
+// Form selects styles presets available for extends.
+//
+// Weight: 10
+//
+// Style guide: Forms - Select
+
+// Default select
+//
+// Default style for select box.
+//
+// Use `@extend %select-default` to apply.
+//
+// Markup:
+// <div class="rocket-ui">
+//   <label class="select-default" for="select-default-placeholder">
+//     <span>Select</span>
+//     <select name="select-default" id="select-default-placeholder">
+//       <option disabled>search</option>
+//       <option>Russian Federation</option>
+//       <option>Puerto Rico</option>
+//       <option>Guam</option>
+//       <option>France</option>
+//       <option>Guinea-Bissau</option>
+//       <option>Martinique</option>
+//       <option>Lorem ipsum</option>
+//       <option>Dolor sit amet</option>
+//       <option>consectetur adipiscing elit</option>
+//       <option>Sed sagittis</option>
+//       <option>arcu quis</option>
+//       <option>tempor a tortor non</option>
+//     </select>
+//   </label>
+//   <label class="select-default" for="select-default-selected">
+//     <span>Select</span>
+//     <select name="select-default" id="select-default-selected">
+//       <option disabled>search</option>
+//       <option>Russian Federation</option>
+//       <option>Puerto Rico</option>
+//       <option>Guam</option>
+//       <option selected>France</option>
+//       <option>Guinea-Bissau</option>
+//       <option>Martinique</option>
+//       <option>Lorem ipsum</option>
+//       <option>Dolor sit amet</option>
+//       <option>consectetur adipiscing elit</option>
+//       <option>Sed sagittis</option>
+//       <option>arcu quis</option>
+//       <option>tempor a tortor non</option>
+//     </select>
+//   </label>
+// </div>
+//
+// Style guide: Forms - Select - Default
+%select-default
+  // @extend %input-labelled
+
+  @apply cursor-default
+
+  position: relative
+
+  .select__input,
+  .select__options li
+    @apply cursor-pointer
+    @apply hidden
+
+  .select__input
+    //@apply pr-8
+    width: 0px
+    padding: 0
+    margin: 0
+    flex: 0
+    @apply invisible
+
+  i
+    @apply text-gray-500
+    pointer-events: none
+
+  .select__options[aria-hidden="false"] ~ .select__input
+    @apply rounded-t-sm
+
+  .select__options
+    @apply absolute
+    @apply z-10
+    top: 100%
+    @apply left-0 right-0
+    @apply p-0 m-0
+    overflow-y: auto
+
+    list-style-type: none
+    @apply rounded-b-sm
+    @apply border-t-0
+
+    @apply bg-white
+
+    li
+      @extend %font-style-input
+      @apply font-semibold
+      @apply p-3
+
+      &:hover
+        @apply bg-indigo-700
+        @apply text-white
+
+
+  .country-select
+    @extend %input-default
+    @apply relative
+    @apply flex flex-row items-center
+    @apply w-full
+    padding-top: 10px
+    padding-bottom: 10px
+    @apply rounded
+    @apply border border-solid border-gray-300
+    @apply cursor-pointer
+
+    flex: 1
+    // padding: 0 15px
+    background: transparent
+    font-weight: 400
+    color: #31325f
+    outline: none
+    cursor: text
+
+    &::after
+      content: ''
+      position: absolute
+      width: 9px
+      height: 5px
+      right: 20px
+      top: 50%
+      margin-top: -2px
+      background-image: url('https://beaniejs.s3.eu-west-3.amazonaws.com/dropdown.svg')
+      pointer-events: none
+
+    .flag-icon
+      @apply flex-none
+      @apply mr-4
+
+    select
+      margin: 0 -15px 0 -30px
+      padding: 0 15px 0 25px
+
+
+  select
+    @apply cursor-pointer
+    flex: 1
+    outline: none
+    font-size: 15px
+    font-family: sans-serif
+    font-weight: 400
+    color: #313b3f
+    line-height: 1.4em
+    width: 100%
+    box-sizing: border-box
+    border-style: none
+    border-radius: 5px
+    -moz-appearance: none
+    -webkit-appearance: none
+    appearance: none
+    background: transparent
+
+    &::-ms-expand
+      display: none
+
+
+
+
+  select,
+  [aria-hidden="true"]:not(svg)
+    // @apply hidden
+
+  &:hover
+    i
+      @apply text-gray-700

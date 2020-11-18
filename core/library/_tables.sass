@@ -1,0 +1,53 @@
+@charset "UTF-8"
+
+// Tables
+//
+// Tables styles presets available for extends.
+//
+// Weight: 5
+//
+// Style guide: Tables
+
+// Commons
+//
+// A private pseudo-class to put together common styles to all tables.
+%_table-commons
+
+
+// Classic table
+//
+// Main style for all table types.
+//
+// Use `@extend %main-table` to apply main tables styles.
+//
+// :hover - Hover style
+//
+// Markup:
+// <div class="rocket-ui">
+//   <table class="table-classic {{modifier_class}}"></table>
+// </div>
+//
+// Style guide: Table - Classic
+
+%table-classic
+  //@extend %_table-commons
+  @apply w-full
+  @apply text-gray-800
+
+%table-classic__header
+  th
+    @apply py-4
+    @apply border-b border-gray-300
+    @apply font-semibold text-indigo-700 text-sm
+
+%table-classic__body
+  tr:not(.table-classic-row__empty)
+    @apply cursor-pointer
+    &:hover
+      @apply bg-gray-200
+  td
+    @apply relative
+    @apply py-2
+    @apply border-b border-gray-300
+    @apply text-sm font-light
+    line-height: 1.5rem

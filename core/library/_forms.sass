@@ -1,0 +1,248 @@
+@charset "UTF-8"
+
+// this is a test to restyle a checkbox
+// .customer .list-item__line .list-item__start input[type=checkbox]
+//   display: none
+
+%input-default
+  @apply px-4 py-0
+  @apply bg-white
+  @extend %font-style-input
+  @apply outline-none
+
+  &::placeholder
+    @apply text-gray-600
+    @apply font-normal
+
+
+%input-labelled
+  @apply relative
+  @apply flex flex-row
+  padding-top: 10px
+  padding-bottom: 10px
+  @apply cursor-pointer
+
+
+  &:not(:last-child)
+    @apply border-b border-gray-300
+
+  .input-group-label
+    min-width: 125px
+    max-width: 125px
+    white-space: nowrap
+    overflow: hidden
+    @apply px-4
+    @extend %font-style-label
+    @apply text-right
+
+    &--required
+      sup:before
+        content: "*"
+        @apply text-xs
+
+  #{$_text-inputs-list}
+    @apply flex-1
+    @extend %input-default
+
+%input-labelled-inline
+  @extend %input-labelled
+  @apply inline-flex
+
+%input-labelled-invalid
+  @extend %input-labelled
+
+  &:not(:last-child)
+    @apply border-b-2 border-red-399
+
+
+
+// Simple fields API
+%simple-field-section
+  @apply relative
+  @apply mb-8
+
+  &:last-of-type
+    @apply mb-0
+
+%simple-field-group
+  @apply relative
+  @apply mb-8
+
+  &:last-of-type
+    @apply mb-0
+
+  .simple-field-label
+    @apply block
+    @apply mb-2
+    @apply text-xs text-black
+    @apply font-semibold
+
+    &--required
+      sup
+        @apply text-xs
+        @apply text-red-600
+
+
+  .simple-field-error-group
+    @apply mt-2
+  .simple-field-error
+    @apply text-xs leading-normal text-red-600
+
+
+  #{$_text-inputs-list}
+    @extend %input-default
+    @apply relative
+    @apply block
+    @apply w-full
+    padding-top: 10px
+    padding-bottom: 10px
+    @apply rounded
+    @apply border border-solid border-gray-300
+    @apply cursor-pointer
+
+    &:hover
+      // @apply border-0
+      box-shadow: 0 1px 3px rgba(41, 41, 93, 0.25)
+
+%simple-field-group--invalid
+  #{$_text-inputs-list}
+    @apply border border-solid border-red-600
+
+    &:hover
+      // @apply border-0
+      box-shadow: 0 1px 3px rgba(241, 28, 18, 0.61)
+
+
+
+
+
+
+// Toggles inputs
+//
+// Form radio and checkbox input styles presets available for extends.
+//
+// Weight: 5
+//
+// Style guide: Forms - Toggle inputs
+
+// Commons
+//
+// A private pseudo-class to put together common styles to all toggles inputs.
+
+%_toggle-common
+  @apply flex-row-reverse
+  @apply items-center
+
+  span
+    @extend %font-style-label
+    @apply pointer-events-none
+
+  [type="radio"],
+  [type="checkbox"]
+    @apply hidden
+
+%_toggle-inline
+  @extend %_toggle-common
+  @apply inline-flex
+
+// Default radio
+//
+// Default style for radio button.
+//
+// Use `@extend %radio-default` to apply.
+//
+// Markup:
+// <div class="rocket-ui">
+//   <fieldset>
+//     <label class="radio-default" for="radio-default-option-1">
+//       <input type="radio" id="radio-default-option-1" name="radio-default" value="1" />
+//       <span>Option 1</span>
+//     </label>
+//     <label class="radio-default" for="radio-default-option-2">
+//       <input type="radio" id="radio-default-option-2" name="radio-default" value="2" checked />
+//       <span>Option 2</span>
+//     </label>
+//   </fieldset>
+//   <fieldset>
+//     <label class="radio-default" for="radio-default-option-standalone">
+//       <input type="radio" id="radio-default-option-standalone" name="standalone-radio-default" />
+//       <span>Standalone choice</span>
+//     </label>
+//   </fieldset>
+// </div>
+//
+// Style guide: Forms - Toggle inputs - Radio default
+%radio-default
+  @extend %_toggle-inline
+
+  [type="radio"] + span
+    @apply relative
+    @apply flex items-center
+    @apply text-gray-700
+    @apply text-sm font-normal
+    padding-left: 10px
+
+    &::before
+      content: ''
+      @apply relative
+      @apply inline-block
+      @apply w-5 h-5
+      left: -10px
+      @apply bg-white
+      @apply rounded-full
+      box-shadow: 0px 2px 8px rgba(41, 41, 93, 0.2)
+
+  [type="radio"]:checked + span::after
+    content: ''
+    @apply absolute
+    @apply flex
+    right: calc(100% - 15px)
+    width: 10px
+    height: 10px
+    @apply rounded-full
+    @apply bg-indigo-600
+
+
+
+
+%form-common
+  .form-section
+  .form-section-title
+    @apply my-4
+    @apply uppercase
+    @apply text-xs text-indigo-700
+    @apply font-semibold
+    letter-spacing: 0.05em
+
+
+  .form-fieldset
+    @apply rounded
+    @apply border-0
+    @apply bg-white
+    box-shadow: 0 2px 8px rgba(41, 41, 93, 0.2)
+    transition: 0.5s all ease
+
+    &--disabled
+      @apply bg-transparent
+      //box-shadow: none
+
+      .input-labelled
+        //@apply border-b-0
+
+
+  .input-group
+    &__append
+      @apply pr-4
+
+  .input-group-required
+    top: -0.25em
+
+  .input-group-icon
+    &--success
+      @apply text-green-500
+    &--failure
+      @apply text-red-600
+
+  .input-group-label
+  .form-control
+    @apply bg-transparent

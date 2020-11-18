@@ -1,0 +1,64 @@
+@charset "UTF-8"
+
+// Badges
+//
+// Buttons styles presets available for extends.
+//
+// Weight: 5
+//
+// Style guide: Buttons
+
+// Commons
+//
+// A private pseudo-class to put together common styles to all buttons.
+%_badge-common
+  @apply inline-block
+  padding-top: 6px
+  padding-bottom: 6px
+  line-height: 1em
+  @apply px-3
+  @apply text-xs
+
+
+// Button primary
+//
+// Primary style for all buttons types.
+//
+// Use `@extend %btn-primary` to apply primary button styles.
+//
+// :hover - Hover style
+//
+// Markup:
+// <div class="rocket-ui">
+//   <button class="btn-primary {{modifier_class}}">view balance</button>
+//   <a role="button" class="btn-primary {{modifier_class}}" href="#">go to section</a>
+//   <button class="btn-primary {{modifier_class}}" disabled>disabled button</button>
+// </div>
+//
+// Style guide: Buttons - Primary
+%badge
+  @extend %_badge-common
+
+%badge-pill
+  @extend %_badge-common
+  @apply rounded-full
+
+%badge-caption
+  @extend %_badge-common
+  @apply font-light uppercase
+
+%badge-positive
+  background-color: rgb(82, 82, 112)
+  @apply text-white font-semibold
+
+%badge-negative
+  //background-color: rgb(172, 93, 108)
+  background-color: #ff8773
+  @apply text-white font-semibold
+
+%badge-success
+  @apply bg-green-500
+  @apply text-white
+
+%badge-archived
+  @apply bg-gray-500

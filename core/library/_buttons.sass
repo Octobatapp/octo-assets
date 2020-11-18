@@ -1,0 +1,116 @@
+@charset "UTF-8"
+
+// Effects (Transitions, Shadows, Animations)
+%btn--lift-up
+  transition: all 250ms ease
+  &:not(:disabled):hover
+    transform: translateY(-2px)
+
+%btn--shadow
+  box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08)
+  &:not(:disabled):hover,
+  &:not(:disabled):focus
+    box-shadow: 0 7px 14px rgba(50, 50, 93, .10), 0 3px 6px rgba(0, 0, 0, .08)
+
+%btn-dropdown
+  @apply h-8
+  @apply px-4
+  @apply border-none rounded-sm
+  @apply text-center leading-loose whitespace-no-wrap
+  @apply outline-none
+  @apply cursor-pointer
+
+%btn--disabled
+  @apply bg-gray-300 text-gray-500
+  @apply cursor-not-allowed
+  box-shadow: none
+
+
+// Elements
+%btn
+  @extend %btn--lift-up
+  @extend %btn--shadow
+  @apply inline-block
+  @apply h-9
+  @apply px-4
+  @apply border-none rounded-sm
+  @apply text-sm font-semibold text-white text-center leading-loose whitespace-no-wrap
+  @apply outline-none
+  @apply cursor-pointer
+
+  .btn-icon
+    @apply inline-block
+    @apply text-xs
+
+    & + span
+      @apply inline-block
+      @apply ml-3
+
+  &:disabled
+    @extend %btn--disabled
+
+%btn--block
+  @apply w-full
+
+
+// %btn-small
+//   @extend %btn--lift-up
+//   @apply border-b border-dashed
+//   @apply text-sm
+//   @apply cursor-pointer
+//
+// %btn-action
+//   @extend %btn--lift-up
+//   @apply py-2 px-4
+//   @apply border border-gray-500 rounded
+//   @apply text-xs text-gray-800 font-bold text-center
+//   @apply cursor-pointer
+//
+// %btn-action-small
+//   @extend %btn--lift-up
+//   @apply text-sm text-gray-600 text-center
+//   &:hover
+//     @apply text-gray-800
+//
+
+%btn--lg
+  @apply h-10 text-base
+
+// Modifiers
+%btn--primary
+  @apply bg-indigo-800
+  &:not(:disabled):hover,
+  &:not(:disabled):focus
+    @apply bg-indigo-700
+
+// %btn--red
+//   @apply bg-red-399
+//   &:hover,
+//   &:focus
+//     @apply bg-red-400
+
+%btn--success
+  @apply bg-green-600
+  &:not(:disabled):hover,
+  &:not(:disabled):focus
+    @apply bg-green-500
+
+
+// %btn--gray
+//   @apply bg-gray-700
+//   &:hover,
+//   &:focus
+//     @apply bg-gray-600
+
+// %btn--pink
+//   background-color: #FF416C
+//
+// %btn-action--teal
+//   &:hover
+//     @apply border-teal
+//     @apply text-teal
+//
+// %btn-action--red
+//   &:hover
+//     @apply border-red-500
+//     @apply text-red-500

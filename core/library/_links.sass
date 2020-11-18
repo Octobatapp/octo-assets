@@ -1,0 +1,45 @@
+// Effects (Transitions, Shadows, Animations)
+%_link-common
+  transition: all 250ms ease
+
+%_link-lift-up
+  &:hover
+    transform: translateY(-1px)
+
+
+%link-secondary
+  @extend %_link-common
+  @extend %_link-lift-up
+  @apply font-semibold leading-normal
+  @apply cursor-pointer
+
+
+  &--positive
+    @extend %_link-common
+    @extend %_link-lift-up
+    @apply font-semibold leading-normal
+    @apply cursor-pointer
+    @apply text-teal-600
+
+    &:hover
+      @apply text-teal-500
+
+
+  &--negative
+    @extend %_link-common
+    @extend %_link-lift-up
+    @apply font-semibold leading-normal
+    @apply cursor-pointer
+    @apply text-red-600
+
+    &:hover
+      @apply text-red-400
+
+
+
+%link-footer
+  @extend %_link-common
+  @extend %_link-lift-up
+
+  @apply font-normal leading-normal text-gray-600 text-xs
+  @apply cursor-pointer no-underline
