@@ -1,0 +1,2 @@
+module RocketAssets
+end
