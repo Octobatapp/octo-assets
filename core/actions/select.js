@@ -93,13 +93,12 @@ const buildSelectboxCountry = (select) => {
   select.parentNode.insertBefore(wrapper, select)
 
   // move select into wrapper
-  wrapper.appendChild(flag)
+  if (flag !== undefined && flag !== null)
+    wrapper.appendChild(flag)
+
   wrapper.appendChild(select)
 
   fakeInputs.push(input)
-
-  console.log()
-
 
   // Insert options into select country
   var list = require("./countries.js");
