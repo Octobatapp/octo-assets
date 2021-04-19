@@ -24,24 +24,24 @@
 //
 // Markup:
 // <div class="rocket-ui">
-//   <table class="table-classic {{modifier_class}}"></table>
+//   <table class="table-view {{modifier_class}}"></table>
 // </div>
 //
 // Style guide: Table - Classic
 
-%table-classic
+%table-view
   //@extend %_table-commons
   @apply w-full
   @apply text-blueGray-800
 
-%table-classic__header
+%table-view__header
   th
     @apply py-4
     @apply border-b border-blueGray-300
     @apply font-semibold text-indigo-700 text-sm
 
-%table-classic__body
-  tr:not(.table-classic-row__empty)
+%table-view__body
+  tr:not(.table-view-row__empty)
     @apply cursor-pointer
     &:hover
       @apply bg-blueGray-200
