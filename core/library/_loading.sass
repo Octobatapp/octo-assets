@@ -1,0 +1,47 @@
+@charset "UTF-8"
+
+  
+// Effects (Transitions, Shadows, Animations)
+@keyframes shimmer
+  100%
+    transform: translateX(100%)
+
+%loading--after
+  @apply absolute
+  @apply inset-0
+  background-image: linear-gradient(90deg, rgba(#fff, 0) 0, rgba(#fff, 0.2) 20%, rgba(#fff, 0.5) 60%, rgba(#fff, 0))
+  transform: translateX(-100%)
+  animation: shimmer 4s infinite
+  content: ''
+
+
+// Elements
+%loading-skeleton-box
+  @apply relative
+  @apply inline-block
+  @apply bg-blueGray-100
+  @apply overflow-hidden
+
+  &::after
+    @extend %loading--after
+
+%loading-skeleton-circle
+  // @apply relative
+  // @apply inline-block
+  // @apply align-middle
+  // @apply bg-blueGray-100
+  // @apply overflow-hidden
+  @extend %loading-skeleton-box
+  @apply rounded-full
+  @apply w-8 h-8
+
+  &::after
+    @extend %loading--after
+
+
+// Modifiers
+%loading-skeleton-circle--8
+  @apply w-8 h-8
+
+%loading-skeleton-circle--16
+  @apply w-16 h-16
