@@ -36,7 +36,11 @@ const toggleOptions = (inputNode, state) => {
 }
 
 const buildSelectbox = (select) => {
+  console.log(select)
   const label = select.closest('.select-default')
+  console.log(label)
+  const wrapper = document.createElement('div')
+  wrapper.classList.add('field-select')
 
   const input = document.createElement('input')
   // // const options = document.createElement('ul')
@@ -50,6 +54,8 @@ const buildSelectbox = (select) => {
 
   fakeInputs.push(input)
 
+  select.parentNode.insertBefore(wrapper, select)
+  wrapper.appendChild(select)
   // select.querySelectorAll('option').forEach((option, idx) => {
   //   if (idx === 0 && option.hasAttribute('disabled')) {
   //     input.setAttribute('placeholder', option.innerText)
@@ -150,6 +156,7 @@ export const bindGlobalEvents = () => {
 }
 
 export const register = (selector) => {
+  console.log(selector)
   if (typeof selector === 'string') {
     if (selector.includes('select-country') == true) {
       document
@@ -167,7 +174,15 @@ export const register = (selector) => {
   }
 }
 
-export default function init (selector) {
-  //bindGlobalEvents()
-  if (selector) register(selector)
+const init = (selector) => {
+    //bindGlobalEvents()
+    if (selector) register(selector)
+
 }
+
+export default init
+
+// export default function init (selector) {
+//   //bindGlobalEvents()
+//   if (selector) register(selector)
+// }
