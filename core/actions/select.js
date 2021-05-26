@@ -36,9 +36,7 @@ const toggleOptions = (inputNode, state) => {
 }
 
 const buildSelectbox = (select) => {
-  console.log(select)
   const label = select.closest('.select-default')
-  console.log(label)
   const wrapper = document.createElement('div')
   wrapper.classList.add('field-select')
 
@@ -156,7 +154,6 @@ export const bindGlobalEvents = () => {
 }
 
 export const register = (selector) => {
-  console.log(selector)
   if (typeof selector === 'string') {
     if (selector.includes('select-country') == true) {
       document
