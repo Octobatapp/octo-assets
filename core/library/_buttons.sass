@@ -52,6 +52,9 @@
 %btn--block
   @apply w-full
 
+%btn--rounded
+  @apply rounded
+
 
 // %btn-small
 //   @extend %btn--lift-up
@@ -94,6 +97,12 @@
   &:not(:disabled):hover,
   &:not(:disabled):focus
     @apply bg-green-500
+
+%btn--cancel
+  @apply bg-white
+  @apply text-rose-700 hover:text-rose-600 text-sm
+  @apply border border-blueGray-300
+  @apply focus:outline-none focus:border-rose-700 
 
 
 // %btn--gray
