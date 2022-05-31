@@ -20,6 +20,6 @@
   "dependencies": {
     "postcss": "^8.1.7",
     "postcss-import": "^13.0.0",
-    "tailwindcss": "latest"
+    "tailwindcss": "^3.0.24"
   }
 }

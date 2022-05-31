@@ -32,18 +32,18 @@
 %table-view
   //@extend %_table-commons
   @apply min-w-full
-  @apply text-blueGray-800
+  @apply text-slate-800
 
 %table-view__header
   th
     @apply py-2 px-2
-    @apply border-b border-blueGray-200
+    @apply border-b border-slate-200
     @apply font-semibold text-indigo-700 text-sm
 
 %table-view__header--nested
   th
     @apply py-2 px-2
-    @apply border-b border-t border-blueGray-200
+    @apply border-b border-t border-slate-200
     @apply font-semibold text-indigo-700 text-sm
 
 
@@ -51,10 +51,10 @@
   tr:not(.table-view-row__empty)
     @apply cursor-pointer
     &:hover
-      @apply bg-blueGray-50
+      @apply bg-slate-50
   td
     @apply relative
     @apply py-2 px-2
-    @apply border-b border-blueGray-200
+    @apply border-b border-slate-200
     @apply text-sm font-light
     line-height: 1.5rem
